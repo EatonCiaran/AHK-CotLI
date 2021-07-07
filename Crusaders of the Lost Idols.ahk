@@ -6,6 +6,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 DetectHiddenWindows, On
 
 global GameTitle := "Crusaders of The Lost Idols"
+global CheatEngineTitle := "Cheat Engine 7.2"
 
 #If WinActive(GameTitle)
 ^F1::
@@ -77,7 +78,7 @@ Return
 Return
 
 ^F4::
-	ControlFocus,, Cheat Engine 6.7
+	ControlFocus,, %GameTitle%
 	SetControlDelay -1
 
 	Loop {
@@ -86,7 +87,7 @@ Return
 Return
 
 ^F5::
-	ControlFocus,, Cheat Engine 6.7
+	ControlFocus,, %GameTitle%
 	SetControlDelay -1
 
 	Loop {
@@ -387,19 +388,19 @@ ce_set_speed(speed) {
 	ce_apply_speed()
 }
 ce_enter_speed(speed) {
-	ControlSetText, Edit1, %speed%, Cheat Engine 6.7
+	ControlSetText, Edit1, %speed%, %CheatEngineTitle%
 	Sleep 30
 }
 ce_apply_speed() {
-	ControlClick, Button3, Cheat Engine 6.7
+	ControlClick, Button3, %CheatEngineTitle%
 	Sleep 30
 }
 
 ce_focus_speedbox() {
-	ControlFocus, Edit1, Cheat Engine 6.7
+	ControlFocus, Edit1, %CheatEngineTitle%
 	Sleep 50
 }
 ce_toggle_speedhack() {
-	ControlClick, Button4, Cheat Engine 6.7
+	ControlClick, Button4, %CheatEngineTitle%
 	Sleep 10
 }
